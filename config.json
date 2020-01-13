@@ -1,0 +1,15 @@
+{
+    "backupDir": "/home/vagrant/backups/",
+    "databases": [
+        {
+            "database": "testdatabase1",
+            "username": "testuser1",
+            "password": "testpass1"
+        },
+        {
+            "database": "testdatabase2",
+            "username": "testuser2",
+            "password": "testpass2"
+        }
+    ]
+}
