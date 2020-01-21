@@ -1,3 +1,5 @@
+import { moment } from "https://deno.land/x/moment/moment.ts";
+
 interface DatabaseConfig{
   database: string;
   username: string;
@@ -6,8 +8,8 @@ interface DatabaseConfig{
 
 async function backupDatabase(dbConfig: DatabaseConfig, backupDir: string) {
   console.log("Backup database: " + dbConfig.database);
-  const now = new Date();
-  let filename = backupDir + dbConfig.database + "_dump_" + now.getFullYear() + now.getMonth() + now.getDay() + now.getHours() + now.getMinutes() + ".sql";
+  const now = moment();
+  let filename = backupDir + dbConfig.database + "_dump_" + moment().format('YYYYMMDDHHmm') + ".sql";
   console.log(filename);
   const p = Deno.run({
     args: [
